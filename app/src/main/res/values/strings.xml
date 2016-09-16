@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpanGer</string>
+    <string name="polishWord">Polish</string>
+    <string name="spanishWord">Spanish</string>
+    <string name="germanWord">German</string>
+    <string name="btnPush">New Word</string>
+</resources>
