@@ -13,13 +13,13 @@ public class TestExtractWords {
 
     @Test
     public void testMainExtractWords_extractCorrect(){
-        String expected = "wiosna primavera der Frühling";
+        String expected = "wiosna primavera Frühling";
         assertEquals(expected, ma.extractWords(1));
-        expected = "lato verano der Sommer";
+        expected = "lato verano Sommer";
         assertEquals(expected, ma.extractWords(2));
-        expected = "jesień otońo der Herbst";
+        expected = "jesień otońo Herbst";
         assertEquals(expected, ma.extractWords(3));
-        expected = "zima invierno der Winter";
+        expected = "zima invierno Winter";
         assertEquals(expected, ma.extractWords(4));
     }
 

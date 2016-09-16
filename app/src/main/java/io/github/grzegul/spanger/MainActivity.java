@@ -13,35 +13,13 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private Button btnPush;
     private TextView polishWord, spanishWord, germanWord;
-    private static final Map<Integer, String> dbPolish = new HashMap<Integer, String>();
-    private static void createDbPolish(){
-        dbPolish.put(0, "słowa");
-        dbPolish.put(1, "wiosna");
-        dbPolish.put(2, "lato");
-        dbPolish.put(3, "jesień");
-        dbPolish.put(4, "zima");
-    }
-    private static final Map<Integer, String> dbSpanish = new HashMap<Integer, String>();
-    private static void createDbSpanish(){
-        dbSpanish.put(0, "palabras");
-        dbSpanish.put(1, "primavera");
-        dbSpanish.put(2, "verano");
-        dbSpanish.put(3, "otońo");
-        dbSpanish.put(4, "invierno");
-    }
-    private static final Map<Integer, String> dbGerman = new HashMap<Integer, String>();
-    private static void createDbGerman(){
-        dbGerman.put(0, "?word");
-        dbGerman.put(1, "Frühling");
-        dbGerman.put(2, "Sommer");
-        dbGerman.put(3, "Herbst");
-        dbGerman.put(4, "Winter");
-    }
+    private static final String [] dbPolish = new String[]{"słowa", "wiosna", "lato", "jesień", "zima"};
+    private static final String [] dbSpanish = new String []{"palabras", "primavera", "verano", "otońo", "invierno"};
+    private static final String [] dbGerman = new String []{"?word", "Frühling", "Sommer", "Herbst", "Winter"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        createDbPolish();
-        createDbSpanish();
-        createDbGerman();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -69,15 +47,14 @@ public class MainActivity extends AppCompatActivity {
         /*createDbPolish();
         createDbSpanish();
         createDbGerman();*/
-        System.out.println("index" + index);
 
-        return dbPolish.get(index) + " " + dbSpanish.get(index) + " " + dbGerman.get(index);
+        return dbPolish[index] + " " + dbSpanish[index] + " " + dbGerman[index];
     }
 
 
     public int randomWord() {
         Random random = new Random();
-        int num = random.nextInt(dbPolish.size());
+        int num = random.nextInt(5);
         return num;
     }
 }
