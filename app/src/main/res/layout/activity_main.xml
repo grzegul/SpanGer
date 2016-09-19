@@ -12,10 +12,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/polishWord"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/polishWord" />
 
     <TextView
@@ -24,10 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/spanishWord"
         android:id="@+id/spanishWord"
+        android:layout_marginTop="55dp"
         android:layout_below="@+id/polishWord"
-        android:layout_alignLeft="@+id/germanWord"
-        android:layout_alignStart="@+id/germanWord"
-        android:layout_marginTop="48dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/germanWord"
         android:id="@+id/germanWord"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="55dp"
         android:layout_below="@+id/spanishWord"
         android:layout_centerHorizontal="true" />
 

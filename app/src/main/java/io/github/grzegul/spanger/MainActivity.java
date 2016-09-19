@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView polishWord, spanishWord, germanWord;
     private static final String [] dbPolish = new String[]{"słowa", "wiosna", "lato", "jesień", "zima"};
     private static final String [] dbSpanish = new String []{"palabras", "primavera", "verano", "otońo", "invierno"};
-    private static final String [] dbGerman = new String []{"?word", "Frühling", "Sommer", "Herbst", "Winter"};
+    private static final String [] dbGerman = new String []{"Worte", "Frühling", "Sommer", "Herbst", "Winter"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,30 +29,31 @@ public class MainActivity extends AppCompatActivity {
         btnPush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = extractWords(randomWord());
-                //String s = "wio la je";
-                polishWord.setText(s.split(" ")[0]);
-                spanishWord.setText(s.split(" ")[1]);
-                germanWord.setText(s.split(" ")[2]);
+                String[] komplet = extractWords(randomWord());
+                polishWord.setText(komplet[0]);
+                spanishWord.setText(komplet[1]);
+                germanWord.setText(komplet[2]);
             }
         });
-
-
-
     }
 
-    public String extractWords(int index) {
-        /*createDbPolish();
-        createDbSpanish();
-        createDbGerman();*/
+    public String[] extractWords(int index) {
+        //String file = TextFile.read("dBs.txt");
+        //TreeSet<String> words = new TreeSet<String>(new TextFile("dBs.txt", "\\W+"));
+        // Display the capitalized words:
+        //System.out.println(file);
+        String[] komplet = new String[3];
+        komplet[0] = dbPolish[index];
+        komplet[1] = dbSpanish[index];
+        komplet[2] = dbGerman[index];
 
-        return dbPolish[index] + " " + dbSpanish[index] + " " + dbGerman[index];
+        return komplet;
     }
 
 
     public int randomWord() {
         Random random = new Random();
-        int num = random.nextInt(5);
+        int num = random.nextInt(dbPolish.length);
         return num;
     }
 }
